@@ -7,6 +7,7 @@ public class HelloWorld {
         int mySecondNumber = 12;
         int myThirdNumber = myFirstNumber * 2;
         int myTotal = myFirstNumber + mySecondNumber + myThirdNumber;
+        int myLastOne = 1000 - myTotal;
 
         System.out.print("First Number = ");
         System.out.println(myFirstNumber);
@@ -19,6 +20,9 @@ public class HelloWorld {
 
         System.out.print("Total = ");
         System.out.println(myTotal);
+
+        System.out.print("1000 Less = ");
+        System.out.println(myLastOne);
     }
 
 }

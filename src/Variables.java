@@ -96,7 +96,6 @@ public class Variables {
         char myUnicode = '\u00A9';
         System.out.println(myChar);
         System.out.println(myUnicode);
-
         boolean myBooleanT = true;
         boolean myBooleanF = false;
 
@@ -109,7 +108,6 @@ public class Variables {
         System.out.println(myNum2 + myNumString);
 
 
-
 //      PRIMITIVE TYPE CHALLENGE
         byte byteNum = 10;
         short shortNum = 20;
@@ -119,6 +117,7 @@ public class Variables {
 
         System.out.println(totalNumLong);
         System.out.println(totalNumShort);
+
 
 //      CHALLENGE
         double poundValue = 2d;

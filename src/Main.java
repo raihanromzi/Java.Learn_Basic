@@ -308,22 +308,82 @@ public class Main {
 
 //      ==================== 8: METHOD ====================
 //      Fill the parameters with value or
-        calculateScore(true, 800, 5, 100);
+        calculateScore2(true, 800, 5, 100);
 
-        calculateScore(true, 10000, 8, 200);
+        calculateScore2(false, 10000, 8, 200);
 
 //      Fill the parameters with variable name
-        calculateScore(gameOver, score, levelCompleted, bonus);
+        calculateScore2(gameOver, score, levelCompleted, bonus);
+
+//      Return Value
+        int highScore = calculateScore(true, 800, 5, 100);
+        System.out.println("Your Final Score is " + highScore);
+
+//      CHALLENGE
+        int highScorePosition = calculatedHighScorePosition(1500);
+        displayHighScorePosition("Raihan", highScorePosition);
+
+        highScorePosition = calculatedHighScorePosition(900);
+        displayHighScorePosition("Shindi", highScorePosition);
+
+        highScorePosition = calculatedHighScorePosition(400);
+        displayHighScorePosition("Tim", highScorePosition);
+
+        highScorePosition = calculatedHighScorePosition(50);
+        displayHighScorePosition("Josh", highScorePosition);
+
+//      Logic Test
+        highScorePosition = calculatedHighScorePosition(1000);
+        displayHighScorePosition("Michel", highScorePosition);
+
 
     }
 
     //      ==================== 8: METHOD ====================
-    public static void calculateScore(boolean gameOver, int score, int levelCompleted, int bonus) {
+//  Void -> Not Return anything
+    public static void calculateScore2(boolean gameOver, int score, int levelCompleted, int bonus) {
 
         if (gameOver) {
             int finalScore = score + (levelCompleted * bonus);
             finalScore += 1000;
             System.out.println("Your final score is " + finalScore);
+        }
+    }
+
+    //  Return an int
+    public static int calculateScore(boolean gameOver, int score, int levelCompleted, int bonus) {
+
+        if (gameOver) {
+            int finalScore = score + (levelCompleted * bonus);
+            finalScore += 1000;
+            System.out.println("Your final score is " + finalScore);
+            return finalScore;
+        } else {
+            return -1;
+        }
+//      Put return outside IF
+//      return -1;
+//      When it was a `void` method, it didn't return anything meaning that the only purpose of the method was to
+//      PRINT TO THE CONSOLE (NOT THE SAME AS RETURNING). Printing to the console doesn't save data in any way,
+//      by returning value from your method, you can assign variables to the result, and you can implement further
+//      logic using the result of your returned function's value.
+    }
+
+    //  CHALLENGE
+    public static void displayHighScorePosition(String playerName, int highScorePosition) {
+        System.out.println(playerName + " Managed to get into position "
+                + highScorePosition + " on the high table");
+    }
+
+    public static int calculatedHighScorePosition(int playerScore) {
+        if (playerScore >= 1000) {
+            return 1;
+        } else if (playerScore >= 500 && playerScore < 1000) {
+            return 2;
+        } else if (playerScore >= 100 && playerScore < 500) {
+            return 3;
+        } else {
+            return 4;
         }
     }
 

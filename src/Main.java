@@ -3,7 +3,7 @@ public class Main {
 
 //      ==================== 1: HELLO WORLD ====================
         System.out.println("Hello World");
-        System.out.println("Hello, Raihan");
+        System.out.println("Hello, People");
 
         int myFirstNumber = (5 + 5) + (5 * 5);
         int mySecondNumber = 12;
@@ -41,12 +41,12 @@ public class Main {
         System.out.println("Short Minimum Value = " + myMinShortValue);
 
 //      INTEGER (32 BITS)
-        int myNum = 10000;
+//      int myNum = 10000;
         int myMinIntValue = Integer.MIN_VALUE; //-2147483648
         int myMaxIntValue = Integer.MAX_VALUE; //2147483647
 
 //      USING "_" TO MAKE IT EASIER TO READ
-        int myMaxIntValueTest = 2_147_483_647;
+//      int myMaxIntValueTest = 2_147_483_647;
         System.out.println("Integer Minimum Value = " + myMinIntValue);
         System.out.println("Integer Maximum Value = " + myMaxIntValue);
 
@@ -55,7 +55,7 @@ public class Main {
         System.out.println("Min int Value + 1 = " + (myMinIntValue - 1));
 
 //      LONG (64 BITS)
-        long myLongNumber = 100L;
+//      long myLongNumber = 100L;
 
 //      Without L in value = 100, Java detect as INT
         long myLongNumber2 = 100;
@@ -336,8 +336,8 @@ public class Main {
         highScorePosition = calculatedHighScorePosition(1000);
         displayHighScorePosition("Michel", highScorePosition);
 
-
     }
+
 
     //      ==================== 8: METHOD ====================
 //  Void -> Not Return anything
@@ -378,13 +378,12 @@ public class Main {
     public static int calculatedHighScorePosition(int playerScore) {
         if (playerScore >= 1000) {
             return 1;
-        } else if (playerScore >= 500 && playerScore < 1000) {
+        } else if (playerScore >= 500) {
             return 2;
-        } else if (playerScore >= 100 && playerScore < 500) {
+        } else if (playerScore >= 100) {
             return 3;
-        } else {
-            return 4;
         }
-    }
 
+        return 4;
+    }
 }

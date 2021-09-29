@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args) {
 
-//      ==================== HELLO WORLD ====================
+//      ==================== 1: HELLO WORLD ====================
         System.out.println("Hello World");
         System.out.println("Hello, Raihan");
 
@@ -27,7 +27,7 @@ public class Main {
         System.out.println(myLastOne);
 
 
-//      ==================== VARIABLES ====================
+//      ==================== 2: VARIABLES ====================
         //      BYTE (8 BITS)
         byte myMinByteValue = Byte.MIN_VALUE; //-128
         byte myMaxByteValue = Byte.MAX_VALUE; //127
@@ -112,8 +112,8 @@ public class Main {
 //      CHAR (16) AND BOOLEAN
         char myChar = 'C';
         char myUnicode = '\u00A9';
-        System.out.println(myChar);
-        System.out.println(myUnicode);
+        System.out.println("Char is = " + myChar);
+        System.out.println("Unicode is = " + myUnicode);
         boolean myBooleanT = true;
         boolean myBooleanF = false;
 
@@ -121,8 +121,8 @@ public class Main {
         String myString = "This String";
         int myNum2 = 50;
         String myNumString = "10";
-        System.out.println("My string is " + myString);
-        System.out.println(myNum2 + myNumString);
+        System.out.println("My string is = " + myString);
+        System.out.println("Add 2 String " + myNum2 + myNumString);
 
 //      PRIMITIVE TYPE CHALLENGE
         byte byteNum = 10;
@@ -131,16 +131,16 @@ public class Main {
         long totalNumLong = (50_000L + (10L * (byteNum + shortNum + intNum)));
         short totalNumShort = (short) (1000 + 10 * (byteNum + shortNum + intNum));
 
-        System.out.println(totalNumLong);
-        System.out.println(totalNumShort);
+        System.out.println("Result = " + totalNumLong);
+        System.out.println("Result = " + totalNumShort);
 
 //      CHALLENGE
         double poundValue = 2d;
         double kilogramValue = 0.45359237d;
-        System.out.println(poundValue * kilogramValue);
+        System.out.println("KG to Pound = " + poundValue * kilogramValue);
 
 
-//      ==================== OPERATOR ====================
+//      ==================== 3: OPERATOR ====================
         //      Operator: + , Operand = 1,2 , Expression = 3
         int result = 1 + 2;
         int result2 = 1 * 2;
@@ -153,25 +153,25 @@ public class Main {
         System.out.println("20 Mod 3 = " + result4);
 
         result++; // result = result + 1 = 3 + 1
-        System.out.println(result);
+        System.out.println("Result = " + result);
 
         result--; // result = result - 1 = 4 - 1
-        System.out.println(result);
+        System.out.println("Result = " + result);
 
-        result +=2; //result = result + 2 = 3 + 2
-        System.out.println(result);
+        result += 2; //result = result + 2 = 3 + 2
+        System.out.println("Result = " + result);
 
         result *= 10; //result = result * 10 = 5 * 10
-        System.out.println(result);
+        System.out.println("Result = " + result);
 
         result /= 10; //result = result / 10 = 50 / 10 = 5
-        System.out.println(result);
+        System.out.println("Result = " + result);
 
         result -= 2; //result = result - 2 = 5 - 2 = 3
-        System.out.println(result);
+        System.out.println("Result = " + result);
 
 
-//      ==================== IF THEN ====================
+//      ==================== 4: IF THEN ====================
         boolean isAlien = false;
 //      Without code block {}, executed only 1 line of command
         if (isAlien == true)
@@ -179,20 +179,20 @@ public class Main {
         System.out.println("And i am scared oh aliens"); // Always printed.
 
 //      With code block
-        if (isAlien == false){
-            System.out.println("A");
-            System.out.println("B");
+        if (isAlien == false) {
+            System.out.println("Print A");
+            System.out.println("Print B");
         }
 
         int topscore = 10;
-        if (topscore <= 100){
+        if (topscore <= 100) {
             System.out.println("High Score");
         }
 
 //      AND Operator (Both true)
         int secondTopscore = 60;
-        if ((topscore < secondTopscore) && (topscore < 100)){
-            System.out.println("C");
+        if ((topscore < secondTopscore) && (topscore < 100)) {
+            System.out.println("Both True");
         }
 
 //      OR Operator (one True)
@@ -202,12 +202,12 @@ public class Main {
 
 //      Assignment (==)
         int newNum = 50;
-        if (newNum ==  50) {
+        if (newNum == 50) {
             System.out.println("This is error");
         }
 
         boolean isCar = false;
-        if (!isCar){ // Not operator
+        if (!isCar) { // Not operator
             System.out.println("This not supposed to happen");
         }
 
@@ -232,32 +232,99 @@ public class Main {
         boolean checkValue = (value3 == 0) ? true : false;
         System.out.println(checkValue);
 
-        if(!checkValue) {
+        if (!checkValue) {
             System.out.println("Got some remainder");
         }
 
 
-//      ==================== EXPRESSION AND KEYWORD ====================
+//      ==================== 5: EXPRESSION AND KEYWORD ====================
 //      CANNOT USE : Int, true, false, null AS VARIABLE
 //      int Int = 6;
 //      int true;
 
 //      Expression = Variable + Values + Operator
         double kmToMile = (100 * 1.609344);
-        if (kmToMile == 10000){
+        if (kmToMile == 10000) {
             System.out.println("Wow Cool");
         }
 
 
-//      ==================== STATEMENTS, WHITESPACE, INDENTATION ====================
+//      ==================== 6: STATEMENTS, WHITESPACE, INDENTATION ====================
+//      Statement is complete line, until ";"
+        int myVar = 50;
+        System.out.println("This is" +
+                "Another" +
+                "Line" +
+                "Still more");
+
+//      Same line statement
+        int myVar1 = 50;
+        myVar1++;
+        System.out.println("Same line");
+
+//      Indent make code easy to read (Reformat code)
 
 
+//      ==================== 7: CODE BLOCK & IF ELSE ====================
+        boolean gameOver = true;
+        int score = 800;
+        int levelCompleted = 5;
+        int bonus = 100;
+
+//      IF-ELSE 1 (with code block) -> Clear
+        if (score == 5000) {
+            System.out.println("Your score was 5000");
+        }
+
+//      IF-ELSE 2 (Only 1 Line)
+        if (score == 5000) System.out.println("Your score was 5000");
+
+//      IF-ELSE 3
+        if (score == 5000) {
+            System.out.println("Your score was 5000");
+        } else if (score > 1000) {
+            System.out.println("Your score was more than 1000");
+        } else {
+            System.out.println("Your score more 5000");
+        }
+
+//      IF-ELSE 4
+        if (gameOver) {
+            int finalScore = score + (levelCompleted * bonus);
+            finalScore += 1_000;
+            System.out.println("Your Final Score was " + finalScore);
+        }
+
+//      CHALLENGE
+        score = 10_000;
+        levelCompleted = 8;
+        bonus = 200;
+
+        if (gameOver) {
+            int finalScore = score + (levelCompleted * bonus);
+            System.out.println("Your Final Score was " + finalScore);
+        }
 
 
+//      ==================== 8: METHOD ====================
+//      Fill the parameters with value or
+        calculateScore(true, 800, 5, 100);
 
+        calculateScore(true, 10000, 8, 200);
 
-
-
+//      Fill the parameters with variable name
+        calculateScore(gameOver, score, levelCompleted, bonus);
 
     }
+
+    //      ==================== 8: METHOD ====================
+    public static void calculateScore(boolean gameOver, int score, int levelCompleted, int bonus) {
+
+        if (gameOver) {
+            int finalScore = score + (levelCompleted * bonus);
+            finalScore += 1000;
+            System.out.println("Your final score is " + finalScore);
+        }
+    }
+
 }

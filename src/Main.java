@@ -336,10 +336,28 @@ public class Main {
         highScorePosition = calculatedHighScorePosition(1000);
         displayHighScorePosition("Michel", highScorePosition);
 
+
+//      ==================== 8: IMPORT METHOD FROM ANOTHER FILE ====================
+//      SpeedConverter (java class file name).printConversion() (method);
+
+
+//      ==================== 8: METHOD OVERLOADING ====================
+//      Use the same name of method but using different (unique) parameters, the key different is name and parameters.
+//      Overloading improve code readability, re-usability, easy to remember, consistency
+        calculateScoreGame("Tim", 100);
+        calculateScoreGame(100);
+        calculateScoreGame();
+
+        // calcFeetAndInchesToCentimeters(6.0, 0.0);
+
+
     }
 
 
-    //      ==================== 8: METHOD ====================
+// -----------------------------------------------------------------------------------------------------
+
+
+//      ==================== 8: METHOD ====================
 //  Void -> Not Return anything
     public static void calculateScore2(boolean gameOver, int score, int levelCompleted, int bonus) {
 
@@ -369,7 +387,7 @@ public class Main {
 //      logic using the result of your returned function's value.
     }
 
-    //  CHALLENGE
+//  CHALLENGE
     public static void displayHighScorePosition(String playerName, int highScorePosition) {
         System.out.println(playerName + " Managed to get into position "
                 + highScorePosition + " on the high table");
@@ -386,4 +404,33 @@ public class Main {
 
         return 4;
     }
+
+//      ==================== 8: METHOD OVERLOADING ====================
+    public static void calculateScoreGame(String playerName, int score) {
+        int playerScore = score * 1000;
+        System.out.println("Player " + playerName + " Scored " + playerScore + " points");
+    }
+
+    public static void calculateScoreGame(int score) {
+        int playerScore = score * 1000;
+        System.out.println("unnamed Player scored " + playerScore + " points");
+    }
+
+    public static int calculateScoreGame() {
+        System.out.println("no player no score");
+        return 0;
+    }
+
+//  CHALLENGE
+//    public static double calcFeetAndInchesToCentimeters(double myFeetNum, double myInchesNum){
+//        if (myFeetNum < 0 || (myInchesNum < 0 || myInchesNum > 12)){
+//            return -1;
+//        }
+//        double centimeters = (myFeetNum * 12) * 2.54;
+//        centimeters += myInchesNum * 2.54;
+//        System.out.println(myFeetNum + " feet + " + myInchesNum + " inches = " + centimeters + " cm");
+//        return centimeters;
+
+//        public static double calcFeetAndInchesToCentimeters(myInchesNum){
+//        }
 }

@@ -18,6 +18,9 @@ public class Exercise {
         boolean testSumChecker = hasEqualSum(1,1,2);
         System.out.println(testSumChecker);
 
+        boolean testIsTeen = hasTeen(19,20,2);
+        System.out.println(testIsTeen);
+
     }
 
 
@@ -96,5 +99,14 @@ public class Exercise {
     public static boolean hasEqualSum (int num1, int num2, int num3){
         int numTotal = num1 + num2;
         return numTotal == num3;
+    }
+
+    //  ======== 8: TEEN NUMBER CHECKER ========
+    public static boolean hasTeen(int num1, int num2, int num3){
+        return isTeen(num1) || isTeen(num2) || isTeen(num3);
+    }
+
+    public static boolean isTeen(int num1){
+        return (num1 <= 19 && num1 >= 13);
     }
 }

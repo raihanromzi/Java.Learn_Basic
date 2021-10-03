@@ -31,10 +31,38 @@ public class Exercise {
 
         printYearsAndDays(1440);
 
+        printDayOfTheWeek(3);
+
+
+        //  ======== 1: PRIMITIVE TYPE CHALLENGE ========
+        byte byteNum = 10;
+        short shortNum = 20;
+        int intNum = 50;
+        long totalNumLong = (50_000L + (10L * (byteNum + shortNum + intNum)));
+        short totalNumShort = (short) (1000 + 10 * (byteNum + shortNum + intNum));
+
+        System.out.println("Result = " + totalNumLong);
+        System.out.println("Result = " + totalNumShort);
+
+        //      CHALLENGE
+        double poundValue = 2d;
+        double kilogramValue = 0.45359237d;
+        System.out.println("KG to Pound = " + poundValue * kilogramValue);
+
+        //  ======== 2: IF-ELSE CHALLENGE ========
+        //  CHALLENGE
+        boolean gameOver = true;
+        int score = 10_000;
+        int levelCompleted = 8;
+        int bonus = 200;
+
+        if (gameOver) {
+            int finalScore = score + (levelCompleted * bonus);
+            System.out.println("Your Final Score was " + finalScore);
+        }
     }
 
-
-    //  ======== 1: CHECK POSITIVE NEGATIVE ZERO NUMBER ========
+    //  ======== 3: CHECK POSITIVE NEGATIVE ZERO NUMBER ========
     public static void checkNumber(int myNumber) {
         if (myNumber == 0) {
             System.out.println("zero");
@@ -45,7 +73,7 @@ public class Exercise {
         }
     }
 
-    //  ======== 2: SPEED CONVERTER ========
+    //  ======== 4: SPEED CONVERTER ========
     public static long toMilesPerHour(double kilometersPerHour) {
         if (kilometersPerHour < 0) {
             return -1;
@@ -62,7 +90,7 @@ public class Exercise {
         }
     }
 
-    //  ======== 3: MEGABYTE CONVERTER ========
+    //  ======== 5: MEGABYTE CONVERTER ========
     public static void printMegaBytesAndKiloBytes(int kiloBytes) {
         if (kiloBytes < 0) {
             System.out.println("Invalid Value");
@@ -73,7 +101,7 @@ public class Exercise {
         }
     }
 
-    //  ======== 4: BARKING DOG ========
+    //  ======== 6: BARKING DOG ========
     public static boolean shouldWakeUp(boolean barking, int hourOfDay) {
         if (hourOfDay < 0 || hourOfDay > 23) {
             return false;
@@ -87,7 +115,7 @@ public class Exercise {
 
     }
 
-    //  ======== 5: LAP YEAR CALCULATOR ========
+    //  ======== 7: LAP YEAR CALCULATOR ========
     public static boolean isLeapYear(int year) {
         if (year < 1 || year > 9999) {
             return false;
@@ -98,20 +126,20 @@ public class Exercise {
         }
     }
 
-    //  ======== 6: DECIMAL COMPARATOR ========
+    //  ======== 8: DECIMAL COMPARATOR ========
     public static boolean areEqualByThreeDecimalPlaces(double num1, double num2) {
         int checkNum1 = (int) (num1 * 1000);
         int checkNum2 = (int) (num2 * 1000);
         return checkNum1 - checkNum2 == 0;
     }
 
-    //  ======== 7: EQUAL SUM CHECKER ========
+    //  ======== 9: EQUAL SUM CHECKER ========
     public static boolean hasEqualSum(int num1, int num2, int num3) {
         int numTotal = num1 + num2;
         return numTotal == num3;
     }
 
-    //  ======== 8: TEEN NUMBER CHECKER ========
+    //  ======== 10: TEEN NUMBER CHECKER ========
     public static boolean hasTeen(int num1, int num2, int num3) {
         return isTeen(num1) || isTeen(num2) || isTeen(num3);
     }
@@ -120,7 +148,7 @@ public class Exercise {
         return (num1 <= 19 && num1 >= 13);
     }
 
-    //  ======== 9: SECOND AND MINUTES CHALLENGE ========
+    //  ======== 11: SECOND AND MINUTES CHALLENGE ========
 
     public static String getDurationString(int minutes, int seconds) {
         if ((minutes < 0) || (seconds < 0) || (seconds > 59)) {
@@ -133,7 +161,7 @@ public class Exercise {
     }
 
     public static String getDurationString(int seconds) {
-        if (seconds < 0){
+        if (seconds < 0) {
             return INVALID_VALUE_MESSAGE;
         }
 
@@ -144,8 +172,8 @@ public class Exercise {
 
     }
 
-    //  ======== 10: AREA CALCULATOR ========
-    public static double area(double radius){
+    //  ======== 12: AREA CALCULATOR ========
+    public static double area(double radius) {
         return (radius < 0) ? -1 : radius * radius * Math.PI;
     }
 
@@ -153,9 +181,9 @@ public class Exercise {
         return (x < 0 && y < 0) ? -1 : x * y;
     }
 
-    //  ======== 11: MINUTES TO YEAR AND DAYS ========
-    public static void printYearsAndDays (long minutes){
-        if(minutes < 0) {
+    //  ======== 13: MINUTES TO YEAR AND DAYS ========
+    public static void printYearsAndDays(long minutes) {
+        if (minutes < 0) {
             System.out.println("Invalid Value");
         } else {
             long year = minutes / 525600;
@@ -164,11 +192,11 @@ public class Exercise {
         }
     }
 
-    //  ======== 12: EQUALITY PRINTER ========
-    public static void printEqual(int num1, int num2, int num3){
-        if(num1 < 0 || num2 < 0 || num3 < 0){
+    //  ======== 14: EQUALITY PRINTER ========
+    public static void printEqual(int num1, int num2, int num3) {
+        if (num1 < 0 || num2 < 0 || num3 < 0) {
             System.out.println("Invalid Value");
-        } else if (num1 == num2 && num1 == num3){
+        } else if (num1 == num2 && num1 == num3) {
             System.out.println("All numbers are equal");
         } else if (num1 != num2 && num2 != num3 && num1 != num3) {
             System.out.println("All numbers are different");
@@ -176,21 +204,22 @@ public class Exercise {
             System.out.println("Neither all are equal or different");
         }
 
-//      System.out.println((x < 0 || y < 0 || z < 0) ? "Invalid Value" : (x == y && x == z) ? "All numbers are equal" :
-//      (x != y && x != z && y != z) ? "All numbers are different" : "Neither all are equal or different");
+        // Alternative Solution :
+        //System.out.println((x < 0 || y < 0 || z < 0) ? "Invalid Value" : (x == y && x == z) ? "All numbers are equal" :
+        //(x != y && x != z && y != z) ? "All numbers are different" : "Neither all are equal or different");
 
     }
 
-    //  ======== 13: PLAYING CAT ========
-    public static boolean isCatPlaying(boolean summer, int temperature){
-        if(summer){
-            if(temperature >= 25 && temperature <=45){
+    //  ======== 15: PLAYING CAT ========
+    public static boolean isCatPlaying(boolean summer, int temperature) {
+        if (summer) {
+            if (temperature >= 25 && temperature <= 45) {
                 return true;
             } else {
                 return false;
             }
         } else {
-            if(temperature >= 25 && temperature <= 35){
+            if (temperature >= 25 && temperature <= 35) {
                 return true;
             } else {
                 return false;
@@ -198,4 +227,33 @@ public class Exercise {
         }
     }
 
+    //  ======== 16: PRINT DAY OF THE WEEK ========
+    public static void printDayOfTheWeek(int day) {
+        switch (day) {
+            case 0:
+                System.out.println("Sunday");
+                break;
+            case 1:
+                System.out.println("Monday");
+                break;
+            case 2:
+                System.out.println("Tuesday");
+                break;
+            case 3:
+                System.out.println("Wednesday");
+                break;
+            case 4:
+                System.out.println("Thursday");
+                break;
+            case 5:
+                System.out.println("Friday");
+                break;
+            case 6:
+                System.out.println("Saturday");
+                break;
+            default:
+                System.out.println("Invalid day");
+                break;
+        }
+    }
 }

@@ -1,3 +1,5 @@
+import java.util.Locale;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -7,8 +9,7 @@ public class Main {
 
         int myFirstNumber = (5 + 5) + (5 * 5);
         int mySecondNumber = 12;
-        int myThirdNumber = myFirstNumber * 2;
-        int myTotal = myFirstNumber + mySecondNumber + myThirdNumber;
+        int myTotal = myFirstNumber + mySecondNumber;
         int myLastOne = 1000 - myTotal;
 
         System.out.print("First Number = ");
@@ -16,9 +17,6 @@ public class Main {
 
         System.out.print("Second Number = ");
         System.out.println(mySecondNumber);
-
-        System.out.print("Third Number = ");
-        System.out.println(myThirdNumber);
 
         System.out.print("Total = ");
         System.out.println(myTotal);
@@ -55,11 +53,10 @@ public class Main {
         System.out.println("Min int Value + 1 = " + (myMinIntValue - 1));
 
 //      LONG (64 BITS)
-//      long myLongNumber = 100L;
 
+//      long myLongNumber = 100L;
 //      Without L in value = 100, Java detect as INT
         long myLongNumber2 = 100;
-
 //      long bigNumInt = 2_147_438_647_123; ERROR
 
         long bigNumInt = 2_147_438_647_123L;
@@ -123,21 +120,6 @@ public class Main {
         String myNumString = "10";
         System.out.println("My string is = " + myString);
         System.out.println("Add 2 String " + myNum2 + myNumString);
-
-//      PRIMITIVE TYPE CHALLENGE
-        byte byteNum = 10;
-        short shortNum = 20;
-        int intNum = 50;
-        long totalNumLong = (50_000L + (10L * (byteNum + shortNum + intNum)));
-        short totalNumShort = (short) (1000 + 10 * (byteNum + shortNum + intNum));
-
-        System.out.println("Result = " + totalNumLong);
-        System.out.println("Result = " + totalNumShort);
-
-//      CHALLENGE
-        double poundValue = 2d;
-        double kilogramValue = 0.45359237d;
-        System.out.println("KG to Pound = " + poundValue * kilogramValue);
 
 
 //      ==================== 3: OPERATOR ====================
@@ -261,7 +243,6 @@ public class Main {
         int myVar1 = 50;
         myVar1++;
         System.out.println("Same line");
-
 //      Indent make code easy to read (Reformat code)
 
 
@@ -292,16 +273,6 @@ public class Main {
         if (gameOver) {
             int finalScore = score + (levelCompleted * bonus);
             finalScore += 1_000;
-            System.out.println("Your Final Score was " + finalScore);
-        }
-
-//      CHALLENGE
-        score = 10_000;
-        levelCompleted = 8;
-        bonus = 200;
-
-        if (gameOver) {
-            int finalScore = score + (levelCompleted * bonus);
             System.out.println("Your Final Score was " + finalScore);
         }
 
@@ -337,11 +308,11 @@ public class Main {
         displayHighScorePosition("Michel", highScorePosition);
 
 
-//      ==================== 8: IMPORT METHOD FROM ANOTHER FILE ====================
+//      ==================== 9: IMPORT METHOD FROM ANOTHER FILE ====================
 //      SpeedConverter (java class file name).printConversion() (method);
 
 
-//      ==================== 8: METHOD OVERLOADING ====================
+//      ==================== 10: METHOD OVERLOADING ====================
 //      Use the same name of method but using different (unique) parameters, the key different is name and parameters.
 //      Overloading improve code readability, re-usability, easy to remember, consistency
         calculateScoreGame("Tim", 100);
@@ -351,13 +322,91 @@ public class Main {
         // calcFeetAndInchesToCentimeters(6.0, 0.0);
 
 
+//      ==================== 11: SWITCH STATEMENTS ====================
+//      4 Data type (Byte, short, char, int
+        int testNum = 5;
+        switch (testNum) {
+            case 1:
+                System.out.println("Num is 1");
+                break;
+            case 2:
+                System.out.println("Num is 2");
+                break;
+            case 3:
+            case 4:
+            case 5:
+                System.out.println("Num is 3 or 4 or 5");
+                break;
+            default:
+                System.out.println("Was not 1 or 2");
+                break;
+        }
+
+//      Challenge
+        char testChar = 'A';
+        switch (testChar) {
+            case 'A':
+                System.out.println("I Found You, A");
+                break;
+            case 'B':
+                System.out.println("Im B");
+                break;
+            case 'C':
+                System.out.println("No! Im C");
+                break;
+            case 'D':
+                System.out.printf("Hey! Im D");
+                break;
+            default:
+                System.out.println("Im not A, B, C, D");
+                break;
+        }
+
+        String month = "JANuary";
+        switch (month.toLowerCase()) {
+            case "january":
+                System.out.println("Jan");
+                break;
+            case "June":
+                System.out.println("Jun");
+                break;
+            default:
+                System.out.println("Nor sure");
+                break;
+        }
+
+//      ==================== 12: FOR LOOP ====================
+//      for(init; termination; increment){
+//
+//      }
+
+        for(int i = 0; i < 5; i++){
+            System.out.println("Loop " + i);
+        }
+
+        for(double i = 8.0; i >= 1.0; i--){
+            System.out.println(calculateInterest(10000.0,i));
+        }
+
+        int count = 0;
+        for(int i = 2; i < 10; i++){
+            if(isPrime(i)){
+                count++;
+                System.out.println(i);
+                if(count == 3){
+                    break;
+                }
+            }
+        }
+        System.out.println("How many prime num = " + count);
+
     }
 
 
 // -----------------------------------------------------------------------------------------------------
 
 
-//      ==================== 8: METHOD ====================
+//  ==================== EXTEND 8: METHOD ====================
 //  Void -> Not Return anything
     public static void calculateScore2(boolean gameOver, int score, int levelCompleted, int bonus) {
 
@@ -368,7 +417,7 @@ public class Main {
         }
     }
 
-    //  Return an int
+//  Return an int
     public static int calculateScore(boolean gameOver, int score, int levelCompleted, int bonus) {
 
         if (gameOver) {
@@ -401,11 +450,11 @@ public class Main {
         } else if (playerScore >= 100) {
             return 3;
         }
-
         return 4;
     }
 
-//      ==================== 8: METHOD OVERLOADING ====================
+
+//  ==================== EXTEND 9: METHOD OVERLOADING ====================
     public static void calculateScoreGame(String playerName, int score) {
         int playerScore = score * 1000;
         System.out.println("Player " + playerName + " Scored " + playerScore + " points");
@@ -421,16 +470,23 @@ public class Main {
         return 0;
     }
 
-//  CHALLENGE
-//    public static double calcFeetAndInchesToCentimeters(double myFeetNum, double myInchesNum){
-//        if (myFeetNum < 0 || (myInchesNum < 0 || myInchesNum > 12)){
-//            return -1;
-//        }
-//        double centimeters = (myFeetNum * 12) * 2.54;
-//        centimeters += myInchesNum * 2.54;
-//        System.out.println(myFeetNum + " feet + " + myInchesNum + " inches = " + centimeters + " cm");
-//        return centimeters;
 
-//        public static double calcFeetAndInchesToCentimeters(myInchesNum){
-//        }
+    //  ==================== EXTEND 12: FOR LOOP ====================
+    public static double calculateInterest(double amount, double interestRate){
+        return (amount * (interestRate/100));
+    }
+
+    public static boolean isPrime(int n){
+        if(n == 1) {
+            return false;
+        } else {
+            for(int i = 2; i < n; i++){
+                if(n % i == 0){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
 }
+

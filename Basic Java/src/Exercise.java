@@ -41,6 +41,13 @@ public class Exercise {
 
         System.out.println(sumDigits(125));
 
+        System.out.println(isPalindrome(-101));
+
+        System.out.println(sumFirstAndLastDigit(101));
+
+        System.out.println(getEvenDigitSum(123456789));
+
+        System.out.println(hasSharedDigit(13,43));
 
 
 
@@ -417,7 +424,63 @@ public class Exercise {
         return sum;
     }
 
+    //  ======== 21: NUMBER PALINDROME ========
+    public static boolean isPalindrome(int number){
+        int reverse = 0;
+        int origin = number;
 
+        while(number != 0){
+            int lastDigit = number % 10;
+            reverse = (reverse * 10) + lastDigit;
+            number /= 10;
+        }
 
+        return reverse == origin;
+    }
+
+    //  ======== 22: FIRST AND LAST DIGIT SUM ========
+    public static int sumFirstAndLastDigit(int number){
+        if(number < 0){
+            return -1;
+        }
+        int lastDigit = number % 10;
+        while (number > 9){
+            number /= 10;
+        }
+        return number + lastDigit;
+    }
+
+    //  ======== 23: EVEN DIGIT SUM ========
+    public static int getEvenDigitSum(int number){
+        int sum = 0;
+        if(number < 0){
+            return -1;
+        } else {
+            while(number > 0) {
+                int lastDigit = number % 10;
+                if (lastDigit % 2 == 0) {
+                    sum += lastDigit;
+                }
+                number /= 10;
+            }
+        }
+        return sum;
+    }
+
+    //  ======== 24: SHARE DIGIT ========
+    public static boolean hasSharedDigit( int x, int y) {
+        if((x < 10) || (x >99) || (y < 10) || (y >99)) {
+            return false;
+        } else {
+            int lastDigitOfX = x % 10;
+            int firstDigitOfX = x / 10;
+            int lastDigitOfY = y % 10;
+            int firstDigitOfY = y / 10;
+            return (lastDigitOfX == lastDigitOfY) || (firstDigitOfX == firstDigitOfY) ||
+                    (lastDigitOfX == firstDigitOfY) || (firstDigitOfX == lastDigitOfY);
+        }
+    }
+
+    //  ======== 25: LAST DIGIT CHECKER ========
 
 }

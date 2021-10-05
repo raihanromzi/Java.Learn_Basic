@@ -1,4 +1,4 @@
-import java.util.Locale;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -323,7 +323,7 @@ public class Main {
 
 
 //      ==================== 11: SWITCH STATEMENTS ====================
-//      4 Data type (Byte, short, char, int
+//      4 Data type (Byte, short, char, int)
         int testNum = 5;
         switch (testNum) {
             case 1:
@@ -355,7 +355,7 @@ public class Main {
                 System.out.println("No! Im C");
                 break;
             case 'D':
-                System.out.printf("Hey! Im D");
+                System.out.println("Hey! Im D");
                 break;
             default:
                 System.out.println("Im not A, B, C, D");
@@ -375,30 +375,113 @@ public class Main {
                 break;
         }
 
-//      ==================== 12: FOR LOOP ====================
+//      ==================== 12: LOOP ====================
 //      for(init; termination; increment){
 //
 //      }
 
-        for(int i = 0; i < 5; i++){
+//      FOR LOOP
+        for (int i = 0; i < 5; i++) {
             System.out.println("Loop " + i);
         }
 
-        for(double i = 8.0; i >= 1.0; i--){
-            System.out.println(calculateInterest(10000.0,i));
+        for (double i = 8.0; i >= 1.0; i--) {
+            System.out.println(calculateInterest(10000.0, i));
         }
 
         int count = 0;
-        for(int i = 2; i < 10; i++){
-            if(isPrime(i)){
+        for (int i = 2; i < 10; i++) {
+            if (isPrime(i)) {
                 count++;
-                System.out.println(i);
-                if(count == 3){
+                System.out.print(i + " ");
+                if (count == 3) {
                     break;
                 }
             }
         }
-        System.out.println("How many prime num = " + count);
+        System.out.println(", How many prime num = " + count);
+
+//      WHILE LOOP
+//      Checks the condition at the start before executing the block
+        int num = 0;
+        while (num != 5) {
+            System.out.print(num + " ");
+            num++;
+        }
+
+        System.out.println();
+
+//      DO WHILE LOOP
+//      At least execute once
+
+        int num2 = 0;
+        do {
+            System.out.print(num2 + " ");
+            num2++;
+        } while (num2 != 6);
+
+        System.out.println();
+
+        int testNum2 = 0;
+        do {
+            boolean even = isEvenNumber(testNum2);
+            System.out.println("Number " + testNum2 + " is even? " + even);
+            testNum2++;
+        } while (testNum2 != 5);
+
+//      Continue bypass all the code block, and start from beginning of while loop
+//      Break = exit the loop
+        testNum2 = 1;
+        int count2 = 0;
+        while (testNum2 <= 20) {
+            testNum2++;
+            if (!isEvenNumber(testNum2)) {
+                continue;
+            }
+            System.out.println("Even number " + testNum2);
+            count2++;
+            if (count2 == 5) {
+                break;
+            }
+        }
+        System.out.println(count2);
+
+//      ==================== 13: PARSING VALUE FROM STRING ====================
+//      Convert string into another data type
+
+        String numString = "2021.123";
+        System.out.println("Number as String = " + numString);
+
+        double number = Double.parseDouble(numString); // int number = Integer.parseInt(numString);
+        System.out.println("Number as Integer = " + number);
+
+        numString += 1;
+        number += 1;
+
+        System.out.println("Number as String + 1= " + numString);
+        System.out.println("Number as Integer + 1 = " + number);
+
+//      ==================== 14: USER INPUT ====================
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter your year of birth : ");
+
+//      Scanner can parse from string to int using nextInt method
+        int yearOfBirth = scanner.nextInt();
+        int age = 2021 - yearOfBirth;
+
+//      Handle next line character (enter key)
+        scanner.nextLine();
+
+        System.out.println("Enter your name : ");
+        String name = scanner.nextLine();
+
+        System.out.println("Your name is " + name);
+        System.out.println("Your age is " + age);
+
+//      Use close always after use it, so it will not error in future
+        scanner.close();
+
 
     }
 
@@ -406,7 +489,7 @@ public class Main {
 // -----------------------------------------------------------------------------------------------------
 
 
-//  ==================== EXTEND 8: METHOD ====================
+    //  ==================== EXTEND 8: METHOD ====================
 //  Void -> Not Return anything
     public static void calculateScore2(boolean gameOver, int score, int levelCompleted, int bonus) {
 
@@ -417,7 +500,7 @@ public class Main {
         }
     }
 
-//  Return an int
+    //  Return an int
     public static int calculateScore(boolean gameOver, int score, int levelCompleted, int bonus) {
 
         if (gameOver) {
@@ -436,7 +519,7 @@ public class Main {
 //      logic using the result of your returned function's value.
     }
 
-//  CHALLENGE
+    //  CHALLENGE
     public static void displayHighScorePosition(String playerName, int highScorePosition) {
         System.out.println(playerName + " Managed to get into position "
                 + highScorePosition + " on the high table");
@@ -454,7 +537,7 @@ public class Main {
     }
 
 
-//  ==================== EXTEND 9: METHOD OVERLOADING ====================
+    //  ==================== EXTEND 9: METHOD OVERLOADING ====================
     public static void calculateScoreGame(String playerName, int score) {
         int playerScore = score * 1000;
         System.out.println("Player " + playerName + " Scored " + playerScore + " points");
@@ -471,22 +554,27 @@ public class Main {
     }
 
 
-    //  ==================== EXTEND 12: FOR LOOP ====================
-    public static double calculateInterest(double amount, double interestRate){
-        return (amount * (interestRate/100));
+    //  ==================== EXTEND 12: LOOP ====================
+    public static double calculateInterest(double amount, double interestRate) {
+        return (amount * (interestRate / 100));
     }
 
-    public static boolean isPrime(int n){
-        if(n == 1) {
+    public static boolean isPrime(int n) {
+        if (n == 1) {
             return false;
         } else {
-            for(int i = 2; i < n; i++){
-                if(n % i == 0){
+            for (int i = 2; i < n; i++) {
+                if (n % i == 0) {
                     return false;
                 }
             }
         }
         return true;
     }
+
+    public static boolean isEvenNumber(int num) {
+        return num % 2 == 0;
+    }
+
 }
 

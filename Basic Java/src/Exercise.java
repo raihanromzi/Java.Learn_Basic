@@ -4,6 +4,8 @@ public class Exercise {
 
 
     public static void main(String[] args) {
+        System.out.println("============== OUTPUT START HERE ==============");
+
         checkNumber(10);
 
         printConversion(1.0);
@@ -33,6 +35,20 @@ public class Exercise {
 
         printDayOfTheWeek(3);
 
+        printNumberInWord(3);
+
+        System.out.println(getDaysInMonth(1, 2020));
+
+        System.out.println(sumDigits(125));
+
+
+
+
+        System.out.println("============== OUTPUT END HERE ==============");
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
 
         //  ======== 1: PRIMITIVE TYPE CHALLENGE ========
         byte byteNum = 10;
@@ -44,7 +60,6 @@ public class Exercise {
         System.out.println("Result = " + totalNumLong);
         System.out.println("Result = " + totalNumShort);
 
-        //      CHALLENGE
         double poundValue = 2d;
         double kilogramValue = 0.45359237d;
         System.out.println("KG to Pound = " + poundValue * kilogramValue);
@@ -60,6 +75,26 @@ public class Exercise {
             int finalScore = score + (levelCompleted * bonus);
             System.out.println("Your Final Score was " + finalScore);
         }
+
+        //  ======== 18: SUM 3 & 5 CHALLENGE ========
+        int count = 0;
+        int sum = 0;
+        for (int i = 1; i < 1000; i++) {
+            if (i % 3 == 0 && i % 5 == 0) {
+                System.out.println(i);
+                count++;
+                sum = sum + i;
+
+                if (count == 5) {
+                    break;
+                }
+            }
+        }
+        System.out.println("Total num : " + count);
+        System.out.println("Total sum num : " + sum);
+
+        System.out.println(sumOdd(1,100));
+
     }
 
     //  ======== 3: CHECK POSITIVE NEGATIVE ZERO NUMBER ========
@@ -256,4 +291,133 @@ public class Exercise {
                 break;
         }
     }
+
+    //  ======== 16: PRINT DAY OF THE WEEK ========
+    public static void printNumberInWord(int num) {
+        switch (num) {
+            case 0:
+                System.out.println("ZERO");
+                break;
+            case 1:
+                System.out.println("ONE");
+                break;
+            case 2:
+                System.out.println("TWO");
+                break;
+            case 3:
+                System.out.println("THREE");
+                break;
+            case 4:
+                System.out.println("FOUR");
+                break;
+            case 5:
+                System.out.println("FIVE");
+                break;
+            case 6:
+                System.out.println("SIX");
+                break;
+            case 7:
+                System.out.println("SEVEN");
+                break;
+            case 8:
+                System.out.println("EIGHT");
+                break;
+            case 9:
+                System.out.println("NINE");
+                break;
+            default:
+                System.out.println("OTHER");
+                break;
+        }
+    }
+
+    //  ======== 17: NUMBER OF DAY IN MONTH ========
+    public static boolean isLeapYear2(int year) {
+        if (year < 1 || year > 9999) {
+            return false;
+        } else {
+            if ((year % 4 == 0 && year % 100 != 00) || (year % 400 == 0)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    public static int getDaysInMonth(int month, int year) {
+        if (month < 1 || month > 12) {
+            return -1;
+        }
+
+        if (year < 1 || year > 9999) {
+            return -1;
+        }
+
+        if (isLeapYear2(year)) {
+            switch (month) {
+                case 11:
+                case 4:
+                case 6:
+                case 9:
+                    return 30;
+                case 2:
+                    return 29;
+                default:
+                    return 31;
+            }
+        } else {
+            switch (month) {
+                case 11:
+                case 4:
+                case 6:
+                case 9:
+                    return 30;
+                case 2:
+                    return 28;
+                default:
+                    return 31;
+            }
+        }
+    }
+
+    //  ======== 19: SUM ODD ========
+
+    public static boolean isOdd(int number) {
+        if(number < 0){
+            return false;
+        }
+        return number % 2 != 0;
+    }
+
+    public static int sumOdd(int start, int end){
+        if(end < start || end < 0 || start < 0){
+            return -1;
+        }
+
+        int sum = 0;
+        for(int i = start; i <= end; i++){
+            if(isOdd(i)){
+                sum = sum + i;
+            }
+        }
+        return sum;
+    }
+
+    //  ======== 20: DIGIT SUM ========
+    public static int sumDigits(int number){
+        if(number < 10){
+            return -1;
+        }
+        int sum = 0;
+        while(number > 0){
+            int tmp = number % 10;
+            sum += tmp;
+            number /= 10;
+        }
+        return sum;
+    }
+
+
+
+
 }

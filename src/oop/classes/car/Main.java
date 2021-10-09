@@ -1,4 +1,4 @@
-package oop;
+package oop.classes.car;
 
 public class Main { //Statements to create a new class in java
 
@@ -10,5 +10,13 @@ public class Main { //Statements to create a new class in java
 
     // Set the model for object honda to "Brio". Because its public. But it's not a good way.
     // honda.model = "Brio";
+
+    // Calling the method to update the object
+    honda.setModel("Brio");
+        System.out.println("Model is " + honda.getModel());
+    toyota.setModel("yaris");
+        System.out.println("Model is " + toyota.getModel());
+
+
     }
 }

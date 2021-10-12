@@ -10,5 +10,6 @@ public class Main {
         System.out.println(brio.getTypeGear());
         System.out.println(brio.getCountWheel());
         brio.handSteering("Right");
+        brio.changingGear(5);
     }
 }

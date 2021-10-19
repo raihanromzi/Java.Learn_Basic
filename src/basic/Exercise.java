@@ -67,7 +67,7 @@ public class Exercise {
 
         printSquareStar(5);
 
-        System.out.println(getBucketCount(3.4,2.1,1.5,2));
+        System.out.println(getBucketCount(3.4, 2.1, 1.5, 2));
 
 
         System.out.println();
@@ -706,13 +706,13 @@ public class Exercise {
     }
 
     //  ======== 32: INPUT CALCULATOR ========
-    public static void inputThenPrintSumAndAverage(){
+    public static void inputThenPrintSumAndAverage() {
         Scanner scanner = new Scanner(System.in);
 
         int sum = 0;
         int count = 0;
 
-        while(true){
+        while (true) {
 
             boolean isAnInt = scanner.hasNextInt();
 
@@ -726,28 +726,28 @@ public class Exercise {
             scanner.nextLine();
         }
 
-        System.out.println("SUM = " + sum + " AVG = " + Math.round((double) sum/count));
+        System.out.println("SUM = " + sum + " AVG = " + Math.round((double) sum / count));
 
         scanner.close();
     }
 
     //  ======== 33: PAINT JOB ========
-    public static int getBucketCount (double width, double height, double areaPerBucket, int extraBucket){
-        if( (width <= 0) || (height <= 0) || (areaPerBucket <= 0) || (extraBucket < 0)) {
+    public static int getBucketCount(double width, double height, double areaPerBucket, int extraBucket) {
+        if ((width <= 0) || (height <= 0) || (areaPerBucket <= 0) || (extraBucket < 0)) {
             return -1;
         }
         return (int) Math.ceil(((width * height) / areaPerBucket) - extraBucket);
     }
 
-    public static int getBucketCount (double width, double height, double areaPerBucket){
-        if( (width <= 0) || (height <= 0) || (areaPerBucket <= 0)) {
+    public static int getBucketCount(double width, double height, double areaPerBucket) {
+        if ((width <= 0) || (height <= 0) || (areaPerBucket <= 0)) {
             return -1;
         }
         return (int) Math.ceil(((width * height) / areaPerBucket));
     }
 
-    public static int getBucketCount (double area, double areaPerBucket){
-        if((area <= 0) || (areaPerBucket <= 0)) {
+    public static int getBucketCount(double area, double areaPerBucket) {
+        if ((area <= 0) || (areaPerBucket <= 0)) {
             return -1;
         }
         return (int) Math.ceil(area / areaPerBucket);

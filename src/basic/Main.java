@@ -515,7 +515,6 @@ public class Main {
         }
         System.out.println("Sum = " + sum);
 
-        inputUser.close();
 
 //      READING INPUT CHALLENGE 2
         Scanner scanner2 = new Scanner(System.in);
@@ -531,7 +530,7 @@ public class Main {
             if (isAnInt) {
                 int numberFromUser = scanner2.nextInt();
                 // Use flag to assign first number to minimum
-                if(firstFlag){
+                if (firstFlag) {
                     firstFlag = false;
                     min = numberFromUser;
                     max = numberFromUser;
@@ -646,5 +645,3 @@ public class Main {
     }
 
 }
-
-
